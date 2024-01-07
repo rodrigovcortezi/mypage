@@ -2,8 +2,15 @@
 import React, { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 
-const Rocket = ({ animationData }: { animationData: string }) => {
+const Rocket = ({
+  animationData,
+  ...rest
+}: {
+  animationData: string;
+  [key: string]: any;
+}) => {
   const animationContainer = useRef(null);
+  const classes = (rest.className ?? "") + " rotate-6";
 
   useEffect(() => {
     if (!animationContainer.current) {
@@ -21,7 +28,7 @@ const Rocket = ({ animationData }: { animationData: string }) => {
     return () => anim.destroy();
   }, [animationData]);
 
-  return <div ref={animationContainer} className="w-[500px] rotate-6" />;
+  return <div ref={animationContainer} {...rest} className={classes} />;
 };
 
 export { Rocket };

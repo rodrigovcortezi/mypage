@@ -9,6 +9,7 @@
 body {
   background-color: var(--background-color);
   position: relative;
+  overflow: hidden;
 }
 
 .background-gradient {

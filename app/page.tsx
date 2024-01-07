@@ -2,7 +2,7 @@ import { Rocket } from "./components/rocket";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-7 md:p-24">
       <div
         className="background-gradient"
         style={{
@@ -21,10 +21,13 @@ export default function Home() {
           right: "-182px",
         }}
       ></div>
-      <h1 className="font-semibold text-white text-7xl uppercase">
+      <h1 className="font-semibold text-white text-3xl md:text-7xl uppercase">
         coming soon
       </h1>
-      <Rocket animationData="/animations/rocket.json" />
+      <Rocket
+        animationData="/animations/rocket.json"
+        className="w-[240px] md:w-[500px]"
+      />
     </main>
   );
 }
